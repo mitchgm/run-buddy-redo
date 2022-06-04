@@ -3,7 +3,9 @@
 * {
     margin: 0;
     padding: 0;
-    
+    /* box-sizing being set to border box makes sure the sections do not exceed the width of the page */
+    box-sizing: border-box;
+
 }
 
 
@@ -58,3 +60,37 @@ header nav ul li a {
     font-weight: lighter;
     font-size: 22px;
 }
+
+footer {
+    background: #fce138;
+    width: 100%;
+    padding: 40px 35px;
+    /* this is telling the padding to give the top and bottom 40 pixels, while the left and right get 35 */
+}
+
+footer h2 {
+    display: inline;
+    color: #024e76;
+    font-size: 30px;
+    margin: 0;
+
+}
+
+footer div {
+    float: right;
+    line-height: 1.5;
+    /* line height adjust the vertical space of the text line, while text-align moves it to the right, the left being the default */
+    text-align: right;
+
+}
+
+footer a {
+    color: #024e76;
+}
+
+
+
+
+
+
+
