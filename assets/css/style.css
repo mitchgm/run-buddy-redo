@@ -88,9 +88,71 @@ footer a {
     color: #024e76;
 }
 
+/* this gives a default style to every section in the html */
+section {
+    padding: 60px;
 
+}
 
+/* need the . before hero because it is a class, not an element */
+.hero {
+    background-image: url("../images/hero-bg.jpg");
+    height: 600px;
+    /* this centers the image, as well as sets it to cover, which make sure the image shrinks so none of it gets clipped out */
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
 
+.hero-form {
+    color: #024e76;
+    background-color: #fce138;
+    padding: 20px;
+    width: 500px;
+    /* this makes the border solid, with a width on all sides of 3, and gives it a color all using the shorthand border */
+    border: solid 3px #024e76;
+    position: absolute;
+    bottom: 120px;
+    right: 140px;
 
+}
+
+/* this is styling the h3 inside the hero-form class */
+.hero-form h3 {
+    font-size: 24px;
+    margin: 0px;
+
+}
+
+.hero-form p {
+    margin: 5px 0px 15px 0px;
+
+}
+
+.form-input {
+    border: 1px solid #024e76;
+    /* setting the display to block means we want each input on a new line regardless of size */
+    display: block;
+    padding: 7px 15px;
+    font-size: 16px;
+    color: #024e76;
+    width: 100%;
+    margin-bottom: 15px;
+
+}
+
+.hero-form label {
+    margin: 0px 5px;
+
+}
+
+.hero-form button {
+    color: #fce138;
+    background-color: #024e76;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+
+}
 
 
