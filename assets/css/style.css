@@ -116,7 +116,7 @@ section {
 
 /* need the . before hero because it is a class, not an element */
 .hero {
-    background-image: url("../images/hero-bg.jpg");
+    background-image: url("../images/hero-image.jpg");
     height: 600px;
     /* this centers the image, as well as sets it to cover, which make sure the image shrinks so none of it gets clipped out */
     background-size: cover;
