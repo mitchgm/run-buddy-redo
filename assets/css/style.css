@@ -1,4 +1,12 @@
 
+:root {
+    --primary-color: #fce138;
+    --secondary-color: #024e76;
+    --tertiary-color: #39a6b2;
+}
+
+
+
 /* this section will style everything on the page, setting default styles */
 * {
     margin: 0;
@@ -14,14 +22,14 @@
 body {
     /* font-family picks the font for the text within body. Color picks the text color */
     font-family: Helvetica, Arial, sans-serif ;
-    color: #39a6b2;
+    color: var(--tertiary-color);
 
 }
 
 header {
     /*padding will provide spacing around the header. background-color will set the color fo the background of the header */
     padding: 20px 35px;
-    background-color: #39a6b2;
+    background-color: var(--tertiary-color);
     /* adding a flexbox */
     display: flex;
     justify-content: space-between;
@@ -36,6 +44,7 @@ header {
     background-size: cover;
     background-attachment: fixed;
     background-position: 80%;
+    z-index: 9999;
 
 }
 
@@ -93,14 +102,14 @@ header nav ul li a {
 }
 
 header nav ul li a:hover {
-    background: #fce138;
-    color: #024e76;
+    background: var(--primary-color);
+    color: var(--secondary-color);
     border-radius: 15px;
     text-shadow: none;
   }
 
 footer {
-    background: #fce138;
+    background: var(--primary-color);
     width: 100%;
     padding: 40px 35px;
     /* this is telling the padding to give the top and bottom 40 pixels, while the left and right get 35 */
@@ -111,7 +120,7 @@ footer {
 
 footer h2 {
     
-    color: #024e76;
+    color: var(--secondary-color);
     font-size: 30px;
     margin: 0;
 
@@ -481,6 +490,67 @@ section {
   .contact-form button:hover {
       color: #fce138;
       background: #39a6b2;
+  }
+
+  .checkbox-wrapper input, .radio-wrapper input {
+      opacity: 0;
+
+  }
+
+  .checkbox-wrapper label, .radio-wrapper label {
+      position: relative;
+      left: 10px;
+      margin: 10px;
+      line-height: 1.6;
+  }
+
+  .checkbox-wrapper label::before, .radio-wrapper label::before {
+    content: "";
+    height: 20px;
+    width: 20px;
+    background: rgba(255, 255, 255, 0.75);  
+    border: 1px solid #024e76;  
+    position: absolute;
+    top: -4px;
+    left: -30px;
+  }
+
+  .radio-wrapper label::before {
+    border-radius: 50%;
+  }
+
+  .radio-wrapper label::after {
+    content: "";
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #024e76;
+    position: absolute;
+    left: -29px;
+    top: -3px;
+    background-image: radial-gradient(circle, #39a6b2, #024e76);
+  }
+  
+  .checkbox-wrapper label::after {
+    content: "";
+    height: 6px;
+    width: 14px;
+    border-left: 2px solid #024e76;
+    border-bottom: 2px solid #024e76;
+    position: absolute;
+    left: -26px;
+    top: 1px;
+    transform: rotate(-58deg);
+  }
+
+  .checkbox-wrapper input + label::after, 
+  .radio-wrapper input + label::after {
+    content: none;
+  }
+  
+  .checkbox-wrapper input:checked + label::after, 
+  .radio-wrapper input:checked + label::after {
+    content: "";
   }
 
   /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
