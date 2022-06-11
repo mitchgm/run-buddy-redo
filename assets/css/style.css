@@ -27,6 +27,15 @@ header {
     justify-content: space-between;
     /* this makes the content wrap when shrunken in screen size */
     flex-wrap: wrap;
+    /* this keeps the header at the top of the page, even when scrolling */
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-image: url("../images/hero-image.jpg");
+    /* this centers the image, as well as sets it to cover, which make sure the image shrinks so none of it gets clipped out */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 80%;
 
 }
 
@@ -38,6 +47,9 @@ header h1 {
     margin: 0;
     /*display: inline; replacing this with a flexbox*/
     /* making this display inline allows the nav element to fit on the same line as the h1 element */
+
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* the first 0 means that there is no horizontal offset, so the shadow will start at the left side of the text. The second 0 indicates no vertical offset. The value 10px defines the radius, or size, of the blur. Finally, rgba 0,0,0,0.5 sets the color to black at half transparency */
 
 }
 
@@ -76,7 +88,16 @@ header nav ul li a {
     font-weight: lighter;
     /* vw stands for viewport width. this is saying that the fonts size should be roughly 1.55% of the window's overall width */
     font-size: 1.55vw;
+    /* the first 0 means that there is no horizontal offset, so the shadow will start at the left side of the text. The second 0 indicates no vertical offset. The value 10px defines the radius, or size, of the blur. Finally, rgba 0,0,0,0.5 sets the color to black at half transparency */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
+
+header nav ul li a:hover {
+    background: #fce138;
+    color: #024e76;
+    border-radius: 15px;
+    text-shadow: none;
+  }
 
 footer {
     background: #fce138;
@@ -139,13 +160,14 @@ section {
 .hero {
     background-image: url("../images/hero-image.jpg");
     /* this centers the image, as well as sets it to cover, which make sure the image shrinks so none of it gets clipped out */
-    background-size: cover;
-    background-position: center;
+    background-attachment: fixed;
+    background-position: 80%;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-items: flex-start;
-   
+    
+    
 }
 
 .hero-cta {
@@ -162,18 +184,23 @@ section {
     font-style: italic;
     font-size: 55px;
     color: #fce138;
+    /* the first 0 means that there is no horizontal offset, so the shadow will start at the left side of the text. The second 0 indicates no vertical offset. The value 10px defines the radius, or size, of the blur. Finally, rgba 0,0,0,0.5 sets the color to black at half transparency */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 
 }
 
 .hero-form {
     color: #024e76;
-    background-color: #fce138;
+    background-color: rgba(252, 225, 56, 0.8);
     padding: 20px;
  
     /* this makes the border solid, with a width on all sides of 3, and gives it a color all using the shorthand border */
     border: solid 3px #024e76;
     width: 40%;
     margin: 3.5%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    /* this adds a rounded border to the form */
+    border-radius: 15px;
 
 }
 
@@ -198,8 +225,16 @@ section {
     color: #024e76;
     width: 100%;
     margin-bottom: 15px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
 
 }
+
+/* create a new rule for focus state */
+.form-input:focus {
+    background-color: rgba(255,255,255, 1);
+    outline: none;
+  }
 
 .hero-form label {
     margin: 0px 5px;
@@ -212,7 +247,12 @@ section {
     border: none;
     padding: 10px 20px;
     font-size: 16px;
+    border-radius: 10px;
 
+}
+
+.hero-form button:hover {
+    background-color: #39a6b2;
 }
 
 
@@ -236,12 +276,15 @@ section {
     margin: 50px auto;
     padding-bottom: 50px;
     width: 80%;
-    border-bottom: 1px solid #39a6b2;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
+    border-bottom: 1px solid #39a6b2;
+}
 
+.step:last-child {
+    border-bottom: none;
 }
 
 .step h3 {
@@ -414,7 +457,14 @@ section {
       width: 100%;
       margin-bottom: 15px;
       margin-top: 5px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.75);
   }
+
+  .contact-form input:focus, .contact-form textarea:focus {
+      background-color: rgba(255,255,255, 1);
+  }
+
 
   .contact-form button {
       width: 100%;
@@ -424,7 +474,13 @@ section {
       text-align: center;
       padding: 15px 0px;
       font-size: 16px;
+      border-radius: 10px;
 
+  }
+
+  .contact-form button:hover {
+      color: #fce138;
+      background: #39a6b2;
   }
 
   /* MEDIA QUERY FOR SMALLER DESKTOP SCREENS AND SMALLER */
@@ -433,6 +489,7 @@ section {
   header {
       padding-bottom: 0;
       justify-content: center;
+      position: relative;
 
   }
 
