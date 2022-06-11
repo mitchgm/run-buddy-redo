@@ -83,10 +83,13 @@ footer {
     width: 100%;
     padding: 40px 35px;
     /* this is telling the padding to give the top and bottom 40 pixels, while the left and right get 35 */
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 footer h2 {
-    display: inline;
+    
     color: #024e76;
     font-size: 30px;
     margin: 0;
@@ -94,7 +97,7 @@ footer h2 {
 }
 
 footer div {
-    float: right;
+    
     line-height: 1.5;
     /* line height adjust the vertical space of the text line, while text-align moves it to the right, the left being the default */
     text-align: right;
@@ -134,23 +137,41 @@ section {
 /* need the . before hero because it is a class, not an element */
 .hero {
     background-image: url("../images/hero-image.jpg");
-    height: 600px;
     /* this centers the image, as well as sets it to cover, which make sure the image shrinks so none of it gets clipped out */
     background-size: cover;
     background-position: center;
-    position: relative;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+   
+}
+
+.hero-cta {
+    width: 35%;
+    text-align: right;
+    margin: 3.5%;
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.3;
+
+}
+
+.hero-cta h2 {
+    font-style: italic;
+    font-size: 55px;
+    color: #fce138;
+
 }
 
 .hero-form {
     color: #024e76;
     background-color: #fce138;
     padding: 20px;
-    width: 500px;
+ 
     /* this makes the border solid, with a width on all sides of 3, and gives it a color all using the shorthand border */
     border: solid 3px #024e76;
-    position: absolute;
-    bottom: 120px;
-    right: 140px;
+    width: 40%;
+    margin: 3.5%;
 
 }
 
