@@ -55,16 +55,27 @@ header nav {
 
 }
 
-/* this is no only styling the li elements with the ul, within the nav that is within the header */
-header nav ul li {
-    display: inline;
-    /* this makes the li stay on the same line instead of being displayed like a traditional list */
+header nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    /* align items center will vertically center the content */
+    align-items: center;
+    list-style: none;
+
 }
+
+/* this is no only styling the li elements with the ul, within the nav that is within the header */
+/* header nav ul li {
+   /* display: inline; */
+    /* this makes the li stay on the same line instead of being displayed like a traditional list */
+
 
 header nav ul li a {
     margin: 0 30px;
     font-weight: lighter;
-    font-size: 22px;
+    /* vw stands for viewport width. this is saying that the fonts size should be roughly 1.55% of the window's overall width */
+    font-size: 1.55vw;
 }
 
 footer {
