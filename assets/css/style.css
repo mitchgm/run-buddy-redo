@@ -22,6 +22,12 @@ header {
     /*padding will provide spacing around the header. background-color will set the color fo the background of the header */
     padding: 20px 35px;
     background-color: #39a6b2;
+    /* adding a flexbox */
+    display: flex;
+    justify-content: space-between;
+    /* this makes the content wrap when shrunken in screen size */
+    flex-wrap: wrap;
+
 }
 
 /* this now creates styles for only the h1 element within the header element */
@@ -30,7 +36,7 @@ header h1 {
     font-size: 36px;
     color: #fce138;
     margin: 0;
-    display: inline;
+    /*display: inline; replacing this with a flexbox*/
     /* making this display inline allows the nav element to fit on the same line as the h1 element */
 
 }
@@ -44,7 +50,7 @@ header a {
 
 header nav {
     /* here were using the float element to move the nav section over to the right of the page */
-    float: right;
+    /*float: right; replacing this with flexbox */
     margin: 7px 0;
 
 }
